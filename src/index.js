@@ -20,9 +20,31 @@ async function main() {
     const paymentService = getPaymentService();
     const notificationService = getNotificationService();
 
+    // 只初始化一次数据库连接
     await userService.initialize();
-    await paymentService.initialize();
-    await notificationService.initialize();
+    // 其他服务复用同一个数据库连接,只创建表
+    userService.db.createTable('payments', {
+      id: 'string',
+      orderId: 'string',
+      userId: 'string',
+      amount: 'number',
+      currency: 'string',
+      status: 'string',
+      paymentMethod: 'string',
+      transactionId: 'string',
+      createdAt: 'date'
+    });
+    userService.db.createTable('notifications', {
+      id: 'string',
+      userId: 'string',
+      type: 'string',
+      recipient: 'string',
+      subject: 'string',
+      content: 'string',
+      status: 'string',
+      sentAt: 'date',
+      createdAt: 'date'
+    });
 
     console.log('✓ 所有模块初始化完成\n');
 

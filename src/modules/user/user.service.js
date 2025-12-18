@@ -68,10 +68,9 @@ export class UserService {
       role: 'user'
     });
 
-    // 移除密码字段
-    delete user.password;
-
-    return user;
+    // 返回用户信息(不包含密码)
+    const { password: _, ...userWithoutPassword } = user;
+    return userWithoutPassword;
   }
 
   /**
@@ -95,11 +94,11 @@ export class UserService {
     // 生成token(简化版)
     const token = this._generateToken(user);
 
-    // 移除密码字段
-    delete user.password;
+    // 返回用户信息(不包含密码)
+    const { password: _, ...userWithoutPassword } = user;
 
     return {
-      user,
+      user: userWithoutPassword,
       token
     };
   }
@@ -114,8 +113,9 @@ export class UserService {
       throw new NotFoundError('User');
     }
 
-    delete user.password;
-    return user;
+    // 返回用户信息(不包含密码)
+    const { password, ...userWithoutPassword } = user;
+    return userWithoutPassword;
   }
 
   /**
