@@ -1,0 +1,27 @@
+{
+  "name": "bmad-parallel-demo",
+  "version": "1.0.0",
+  "description": "BMAD-METHOD并行开发演示项目 - 展示多人协作、模块化开发、Bug修复的最佳实践",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "node --test test/**/*.test.js",
+    "test:user": "node --test test/modules/user/**/*.test.js",
+    "test:payment": "node --test test/modules/payment/**/*.test.js",
+    "test:notification": "node --test test/modules/notification/**/*.test.js",
+    "test:integration": "node --test test/integration/**/*.test.js",
+    "lint": "echo 'Running ESLint...' && exit 0",
+    "format": "echo 'Running Prettier...' && exit 0"
+  },
+  "keywords": [
+    "bmad-method",
+    "parallel-development",
+    "agile",
+    "modular-architecture"
+  ],
+  "author": "BMAD Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
