@@ -1,6 +1,12 @@
 # BMAD-METHOD 并行开发演示项目
 
-这是一个完整的演示项目，展示如何使用 **BMAD-METHOD** 框架进行多人并行开发。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yiancode/bmad-parallel-demo/pulls)
+
+> 一个完整的演示项目，展示如何使用 **BMAD-METHOD** 框架进行多人并行开发。
+
+📖 **配套文章**：[如何驱动Claude Code并行开发，让生产力提升X倍](./docs/article-parallel-development.md)
 
 ## 项目场景
 
